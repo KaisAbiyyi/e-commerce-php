@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title','Landing Page')
+@section('title', 'Landing Page')
 @section('content')
-    <h1>Hello world</h1>
+    @include('components.cards')
 @endsection

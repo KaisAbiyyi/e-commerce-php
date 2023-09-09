@@ -9,9 +9,9 @@
     <title>Simple E-commerce @yield('title')</title>
 </head>
 
-<body>
+<body class="bg-slate-200">
     @include('components.navbar')
-    <div class="container mx-auto flex flex-col">
+    <div class="container pt-4 mx-auto flex flex-col">
         @yield('content')
     </div>
 </body>
