@@ -6,8 +6,14 @@
             <button type="submit" class="px-4 py-2 font-bold text-red-500 uppercase duration-200 bg-slate-100 hover:bg-orange-500 hover:text-slate-100">Search</button>
         </form>
         <div class="flex gap-4">
-            <a href="{{ route('register.view') }}" class="px-4 py-2 font-bold text-red-500 uppercase duration-200 bg-slate-100 hover:bg-orange-500 hover:text-slate-100">Register</a>
-            <a href="/" class="px-4 py-2 font-bold text-red-500 uppercase duration-200 bg-slate-100 hover:bg-orange-500 hover:text-slate-100">Login</a>
+            @guest
+                <a href="{{ route('register.get') }}" class="px-4 py-2 font-bold text-red-500 uppercase duration-200 bg-slate-100 hover:bg-orange-500 hover:text-slate-100">Register</a>
+                <a href="{{ route('login.get') }}" class="px-4 py-2 font-bold text-red-500 uppercase duration-200 bg-slate-100 hover:bg-orange-500 hover:text-slate-100">Log In</a>
+
+            @endguest
+            @auth
+                <a href={{ route('logout') }} class="px-4 py-2 font-bold text-red-500 uppercase duration-200 bg-slate-100 hover:bg-orange-500 hover:text-slate-100">Log Out</a>
+            @endauth
         </div>
     </div>
 </div>

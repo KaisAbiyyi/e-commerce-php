@@ -18,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AppController::class, 'index'])->name('index');
 Route::get('/register', [UserController::class, 'registerGet'])->name('register.get');
 Route::post('/register/post', [UserController::class, 'registerPost'])->name('register.post');
+Route::get('/login',[UserController::class,'loginGet'])->name('login.get');
+Route::post('/login',[UserController::class,'loginPost'])->name('login.post');
+Route::middleware('auth')->group(function () {
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+});
